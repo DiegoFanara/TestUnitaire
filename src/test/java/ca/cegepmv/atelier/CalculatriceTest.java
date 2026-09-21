@@ -69,6 +69,17 @@ class CalculatriceTest {
     void multiplierDeuxNombres() {
         // TODO: Arrange - Act - Assert
         // Vérifiez que multiplier(4, 5) retourne 20
+
+        //Creer int a et b pout le test
+        int a = 4;
+        int b = 5;
+
+        //Multiplication de a et b
+        int resultat = calculatrice.multiplier(a, b);
+
+        // Verifier que 20 est egal au resultat
+        assertEquals(20, resultat);
+
         fail("Test à compléter");
     }
 
