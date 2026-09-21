@@ -79,8 +79,6 @@ class CalculatriceTest {
 
         // Verifier que 20 est egal au resultat
         assertEquals(20, resultat);
-
-        fail("Test à compléter");
     }
 
     @Test

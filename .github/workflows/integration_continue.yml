@@ -4,6 +4,8 @@ name: Compilation du projet TestUnitaire
 #La on specifie a quel moment le workflow doit s'executer. Ici
 on:
   push:
+  workflow_dispatch: #manuel
+    
 
 jobs:
   compilation: #Nom premier job qui s'execute sur un runner Ubuntu
@@ -20,6 +22,6 @@ jobs:
       - name: Ajouter droit pour la compilation
         run: chmod +x ./mvnw
       - name: Compile le projet
-        run: ./mvnw -B test -Dtest=CalculatriceTest#multiplierDeuxNombres
+        run: ./mvnw test -Dtest=CalculatriceTest#additionnerDeuxNombresPositifs+soustraireDonneLaDifference+multiplierDeuxNombres
           
       
