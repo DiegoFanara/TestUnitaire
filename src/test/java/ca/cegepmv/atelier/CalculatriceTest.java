@@ -7,6 +7,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
 /**
  * Atelier — Tests unitaires
  * =========================
@@ -85,7 +87,14 @@ class CalculatriceTest {
     void maxRetourneLePlusGrandDesDeuxNombres() {
         // TODO: Arrange - Act - Assert
         // Vérifiez que max(7, 3) retourne 7
-        fail("Test à compléter");
+
+        int a = 7;
+        int b = 3;
+
+        int retour = calculatrice.max(a, b);
+
+
+        assertEquals(7, retour);
     }
 
     // ------------------------------------------------------------------
@@ -98,14 +107,35 @@ class CalculatriceTest {
         //  - estPair(4) doit être vrai
         //  - estPair(7) doit être faux
         //  - estPair(0) doit être vrai
-        fail("Test à compléter");
+
+        int pair1 = 4;
+        int inpair = 7;
+        int pair2 = 0;
+
+        assertAll(
+        () -> assertTrue(calculatrice.estPair(pair1)),
+        () -> assertFalse(calculatrice.estPair(inpair)),
+        () -> assertTrue(calculatrice.estPair(pair2))
+        );
+        
     }
 
     @Test
     void diviserParZeroLanceUneException() {
         // TODO: utilisez assertThrows(ArithmeticException.class, () -> ...)
         // pour vérifier que diviser(10, 0) lance bien une ArithmeticException.
-        fail("Test à compléter");
+
+        int a = 10;
+        int b = 0;
+
+        // Act + Assert
+        ArithmeticException exception = assertThrows(
+            ArithmeticException.class,
+            () -> calculatrice.diviser(a, b)
+        );
+
+        assertEquals("Division par zéro impossible", exception.getMessage());
+        
     }
 
     // ------------------------------------------------------------------
